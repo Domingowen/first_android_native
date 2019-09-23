@@ -1,10 +1,13 @@
 package com.example.android_navigation_learn;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -12,7 +15,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.internal.NavigationMenu;
 import com.google.android.material.navigation.NavigationView;
 
-public class MainActivity extends AppCompatActivity implements FirstNavgiation.OnFragmentInteractionListener, SecondNavigation.OnFragmentInteractionListener {
+public class MainActivity extends AppCompatActivity
+        implements BottomNavigationView.OnNavigationItemSelectedListener {
 
 //    private BottomNavigationView bottomNavigationView;
 //    private BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavView);
@@ -22,6 +26,7 @@ public class MainActivity extends AppCompatActivity implements FirstNavgiation.O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getSupportActionBar().hide();
 //        Button button = findViewById(R.id.first_navigation);
 //        button.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -30,17 +35,40 @@ public class MainActivity extends AppCompatActivity implements FirstNavgiation.O
 //            }
 //        });
 
-//        bottomNavigationView.setItemIconTintList(null);
-//        bottomNavigationView.setItemIconTintList(null);
         BottomNavigationView navigationView = (BottomNavigationView) findViewById(R.id.bottomNavView);
-//        navigationView.setNavigationItemSelectedListener(this);
         navigationView.setItemIconTintList(null);
-//        bottomNavigationView.setItemIconTintList(null);
+        navigationView.setOnNavigationItemSelectedListener(this);
+        loadFragment(new HomeFragment());
+    }
+
+//    @Override
+//    public void onFragmentInteraction(Uri uri){
+//        //you can leave it empty
+//    }
+
+    private boolean loadFragment(Fragment fragment) {
+        if (fragment != null) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.content, fragment).commit();
+            return true;
+        }
+        return false;
     }
 
     @Override
-    public void onFragmentInteraction(Uri uri){
-        //you can leave it empty
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        Fragment fragment = null;
+        switch (item.getItemId()) {
+            case R.id.account:
+                fragment = new HomeFragment();
+                break;
+            case R.id.fortune:
+                fragment = new FortuneFragment();
+                break;
+            case R.id.benefit:
+                fragment = new BenefitFragment();
+                break;
+        }
+        return loadFragment(fragment);
     }
 
 //    @Override

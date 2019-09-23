@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    >
-        <item android:id="@+id/action_search"
-            android:title="账户"
-            android:icon="@drawable/account" />
-        <item android:id="@+id/action_settings"
-
-            android:title="财富"
-            android:icon="@drawable/benefit" />
-        <item android:id="@+id/action_navigation"
-
-            android:title="权益"
-            android:icon="@drawable/fortune" />
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/account"
+        android:icon="@drawable/account"
+        android:title="账户" />
+    <item
+        android:id="@+id/fortune"
+        android:icon="@drawable/benefit"
+        android:title="财富" />
+    <item
+        android:id="@+id/benefit"
+        android:icon="@drawable/fortune"
+        android:title="权益" />
 
 </menu>
