@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/firstNavgiation">
+
+    <fragment
+        android:id="@+id/firstNavgiation"
+        android:name="com.example.android_navigation_learn.FirstNavgiation"
+        android:label="fragment_first_navgiation"
+
+        tools:layout="@layout/fragment_first_navgiation">
+        <action
+            android:id="@+id/action_firstNavigation_to_secondNavigation"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:destination="@id/secondNavigation" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondNavigation"
+        android:name="com.example.android_navigation_learn.SecondNavigation"
+        android:label="fragment_second_navigation"
+        tools:layout="@layout/fragment_second_navigation">
+        <action
+            android:id="@+id/action_secondNavigation_to_firstNavigation"
+            app:destination="@id/firstNavgiation"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+
+            />
+    </fragment>
+</navigation>
