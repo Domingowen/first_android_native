@@ -17,4 +17,6 @@ public class BenefitFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_benefit, null);
     }
 
+
+
 }

@@ -34,9 +34,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
-    public Cursor getAllData() {
-
-
-
-    }
+//    public Cursor getAllData() {
+//
+//
+//
+//    }
 }

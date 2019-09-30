@@ -51,6 +51,7 @@
         android:background="#fff"
         app:elevation="0dp"
         app:itemBackground="@null"
+        app:itemIconTint="@drawable/selector_bottombar_item"
         app:itemTextAppearanceActive="@style/BottomNavigationView"
         app:itemTextAppearanceInactive="@style/BottomNavigationView"
         app:itemTextColor="@drawable/selector_bottombar_item"

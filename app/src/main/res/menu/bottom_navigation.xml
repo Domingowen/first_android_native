@@ -6,11 +6,11 @@
         android:title="账户" />
     <item
         android:id="@+id/fortune"
-        android:icon="@drawable/benefit"
+        android:icon="@drawable/fortune"
         android:title="财富" />
     <item
         android:id="@+id/benefit"
-        android:icon="@drawable/fortune"
+        android:icon="@drawable/benefit"
         android:title="权益" />
 
 </menu>

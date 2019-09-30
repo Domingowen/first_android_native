@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity
 //        });
 
         BottomNavigationView navigationView = (BottomNavigationView) findViewById(R.id.bottomNavView);
-        navigationView.setItemIconTintList(null);
+//        navigationView.setItemIconTintList(null);
         navigationView.setOnNavigationItemSelectedListener(this);
         loadFragment(new HomeFragment());
     }
